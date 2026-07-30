@@ -1,0 +1,47 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  transition: opacity 0.5s ease;
+}
+
+.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.terminal {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+.line {
+  white-space: nowrap;
+}
+
+.ok {
+  color: var(--accent);
+  margin-right: 0.75rem;
+}
+
+.text {
+  color: var(--text-secondary);
+}
+
+.cursorLine {
+  margin-top: 4px;
+}
+
+.blink {
+  color: var(--accent);
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
