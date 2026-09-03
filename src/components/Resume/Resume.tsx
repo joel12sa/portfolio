@@ -2,6 +2,7 @@ import { useState, useCallback, useRef, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
+import { useLanguage } from "../../i18n/LanguageContext";
 import styles from "./Resume.module.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -9,7 +10,10 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url
 ).toString();
 
+const base = import.meta.env.BASE_URL;
+
 export function Resume() {
+  const { t } = useLanguage();
   const [numPages, setNumPages] = useState<number | null>(null);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -38,8 +42,8 @@ export function Resume() {
   return (
     <section id="resume" className={styles.section}>
       <h2 className={styles.heading}>
-        <span className={styles.number}>05</span>
-        CV
+        <span className={styles.number}>06</span>
+        {t.resume.title}
       </h2>
 
       <div className={styles.viewer}>
@@ -48,27 +52,27 @@ export function Resume() {
             className={styles.btn}
             onClick={() => goTo(page - 1)}
             disabled={page <= 1}
-            aria-label="Previous page"
+            aria-label={t.resume.prev}
           >
-            &larr; Prev
+            &larr; {t.resume.prev}
           </button>
           <span className={styles.pageInfo}>
-            Page {page} of {numPages ?? "?"}
+            {t.resume.pageInfo(page, numPages ?? 1)}
           </span>
           <button
             className={styles.btn}
             onClick={() => goTo(page + 1)}
             disabled={page >= (numPages ?? 1)}
-            aria-label="Next page"
+            aria-label={t.resume.next}
           >
-            Next &rarr;
+            {t.resume.next} &rarr;
           </button>
         </div>
 
         <div className={styles.canvas} ref={containerRef}>
-          {loading && <p className={styles.loadingText}>Loading PDF...</p>}
+          {loading && <p className={styles.loadingText}>{t.resume.loading}</p>}
           <Document
-            file="/CV_Franklin_Joel_Sasig.pdf"
+            file={`${base}CV_Franklin_Joel_Sasig.pdf`}
             onLoadSuccess={onLoadSuccess}
             onLoadError={() => setLoading(false)}
             loading={null}
@@ -84,11 +88,11 @@ export function Resume() {
       </div>
 
       <a
-        href="/CV_Franklin_Joel_Sasig.pdf"
+        href={`${base}CV_Franklin_Joel_Sasig.pdf`}
         download
         className={styles.download}
       >
-        Download PDF &darr;
+        {t.resume.download}
       </a>
     </section>
   );

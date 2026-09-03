@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
+import { useLanguage } from "../../i18n/LanguageContext";
 import styles from "./LoadingScreen.module.css";
 
-const bootLines = [
-  { text: "Loading profile...", ok: true },
-  { text: "Fetching endpoints...", ok: true },
-  { text: "Ready.", ok: true },
-];
-
 export function LoadingScreen({ onFinish }: { onFinish: () => void }) {
+  const { t } = useLanguage();
+  const bootLines = t.loading;
   const [visibleLines, setVisibleLines] = useState(0);
   const [fading, setFading] = useState(false);
 
@@ -19,15 +16,15 @@ export function LoadingScreen({ onFinish }: { onFinish: () => void }) {
     const fade = setTimeout(() => setFading(true), 600);
     const done = setTimeout(() => onFinish(), 1100);
     return () => { clearTimeout(fade); clearTimeout(done); };
-  }, [visibleLines, onFinish]);
+  }, [visibleLines, bootLines.length, onFinish]);
 
   return (
     <div className={`${styles.overlay} ${fading ? styles.fadeOut : ""}`} aria-hidden="true">
       <div className={styles.terminal}>
         {bootLines.slice(0, visibleLines).map((line, i) => (
           <div key={i} className={styles.line}>
-            <span className={styles.ok}>[{line.ok ? "  OK  " : "FAIL"}]</span>
-            <span className={styles.text}>{line.text}</span>
+            <span className={styles.ok}>[  OK  ]</span>
+            <span className={styles.text}>{line}</span>
           </div>
         ))}
         {visibleLines < bootLines.length && (
