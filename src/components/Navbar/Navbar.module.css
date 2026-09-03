@@ -70,6 +70,45 @@
   background: var(--accent-glow);
 }
 
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.langToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  transition: border-color 0.2s;
+}
+
+.langToggle:hover {
+  border-color: var(--accent-dim);
+}
+
+.langOption {
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.langActive {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.langDivider {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;

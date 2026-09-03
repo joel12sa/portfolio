@@ -1,19 +1,19 @@
+import { useLanguage } from "../../i18n/LanguageContext";
 import styles from "./Contact.module.css";
 
 export function Contact() {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className={styles.section}>
       <h2 className={styles.heading}>
-        <span className={styles.number}>04</span>
-        Contact
+        <span className={styles.number}>05</span>
+        {t.contact.title}
       </h2>
-      <p className={styles.text}>
-        I'm open to freelance, internship, and full-time opportunities.
-        Reach out and let's build something.
-      </p>
+      <p className={styles.text}>{t.contact.text}</p>
       <div className={styles.links}>
         <a href="mailto:sasigjo3190@gmail.com" className={styles.link}>
-          <span className={styles.linkLabel}>Email</span>
+          <span className={styles.linkLabel}>{t.contact.email}</span>
           <span className={styles.linkValue}>sasigjo3190@gmail.com</span>
         </a>
         <a href="https://linkedin.com/in/franklin-joel-sasig-abrajan" target="_blank" rel="noopener noreferrer" className={styles.link}>
@@ -24,9 +24,9 @@ export function Contact() {
           <span className={styles.linkLabel}>GitHub</span>
           <span className={styles.linkValue}>/franjo3190</span>
         </a>
-        <a href="/CV_Franklin_Joel_Sasig.pdf" target="_blank" rel="noopener noreferrer" className={styles.link}>
+        <a href={`${import.meta.env.BASE_URL}CV_Franklin_Joel_Sasig.pdf`} target="_blank" rel="noopener noreferrer" className={styles.link}>
           <span className={styles.linkLabel}>CV</span>
-          <span className={styles.linkValue}>Download PDF &darr;</span>
+          <span className={styles.linkValue}>{t.contact.cvDownload}</span>
         </a>
       </div>
     </section>

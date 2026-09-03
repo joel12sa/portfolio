@@ -1,50 +1,52 @@
 import { useState, useEffect } from "react";
 import { useCountUp } from "../../hooks/useCountUp";
+import { useLanguage } from "../../i18n/LanguageContext";
 import styles from "./Hero.module.css";
 
 interface Line {
   text: string;
-  type: "prompt" | "key" | string;
+  type: "prompt" | "key";
 }
 
-const lines: Line[] = [
-  { text: "franklin@portfolio --profile", type: "prompt" },
-  { text: "\u251C\u2500 endpoints_built:", type: "key" },
-  { text: "\u251C\u2500 mvp_delivery:", type: "key" },
-  { text: "\u251C\u2500 languages:", type: "key" },
-  { text: "\u251C\u2500 cloud_auth:", type: "key" },
-  { text: "\u2514\u2500 status:", type: "key" },
-];
-
-const staticValues: (string | null)[] = [
-  null,
-  null,
-  '"4 months"',
-  null,
-  '"AWS Cognito"',
-  '"open to work"',
-];
-
 export function Terminal() {
+  const { t } = useLanguage();
   const [visibleLines, setVisibleLines] = useState(1);
   const [revealIndex, setRevealIndex] = useState(-1);
 
   const endpointCount = useCountUp(8, 1200);
   const langCount = useCountUp(6, 1000);
 
+  const lines: Line[] = [
+    { text: t.terminal.command, type: "prompt" },
+    { text: `\u251C\u2500 ${t.terminal.keys.endpoints}`, type: "key" },
+    { text: `\u251C\u2500 ${t.terminal.keys.mvp}`, type: "key" },
+    { text: `\u251C\u2500 ${t.terminal.keys.languages}`, type: "key" },
+    { text: `\u251C\u2500 ${t.terminal.keys.cloudAuth}`, type: "key" },
+    { text: `\u2514\u2500 ${t.terminal.keys.status}`, type: "key" },
+  ];
+
+  const staticValues: (string | null)[] = [
+    null,
+    null,
+    t.terminal.values.fourMonths,
+    null,
+    t.terminal.values.cognito,
+    t.terminal.values.openToWork,
+  ];
+
   useEffect(() => {
     if (visibleLines < lines.length) {
       const timer = setTimeout(() => setVisibleLines((v) => v + 1), 350);
       return () => clearTimeout(timer);
     }
-  }, [visibleLines]);
+  }, [visibleLines, lines.length]);
 
   useEffect(() => {
     if (visibleLines < lines.length) return;
     if (revealIndex >= lines.length - 1) return;
     const timer = setTimeout(() => setRevealIndex((i) => i + 1), 300);
     return () => clearTimeout(timer);
-  }, [visibleLines, revealIndex]);
+  }, [visibleLines, revealIndex, lines.length]);
 
   return (
     <div className={styles.terminal} role="region" aria-label="Profile terminal output">
@@ -52,7 +54,7 @@ export function Terminal() {
         <span className={styles.dot} style={{ background: "#FF5F57" }} />
         <span className={styles.dot} style={{ background: "#FEBC2E" }} />
         <span className={styles.dot} style={{ background: "#28C840" }} />
-        <span className={styles.terminalTitle}>profile — zsh</span>
+        <span className={styles.terminalTitle}>{t.terminal.title}</span>
       </div>
       <div className={styles.terminalBody}>
         {lines.slice(0, visibleLines).map((line, i) => (

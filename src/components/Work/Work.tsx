@@ -1,16 +1,19 @@
-import { experiences } from "./experience";
+import { useLanguage } from "../../i18n/LanguageContext";
 import styles from "./Work.module.css";
 
 export function Work() {
+  const { t } = useLanguage();
+  const experiences = t.work.items;
+
   return (
     <section id="work" className={styles.section}>
       <h2 className={styles.heading}>
         <span className={styles.number}>01</span>
-        Experience
+        {t.work.title}
       </h2>
       <div className={styles.timeline}>
-        {experiences.map((exp) => (
-          <article key={exp.id} className={styles.card}>
+        {experiences.map((exp, idx) => (
+          <article key={idx} className={styles.card}>
             <div className={styles.cardHeader}>
               <span className={styles.year}>{exp.period}</span>
               <div>
