@@ -27,7 +27,7 @@ function App() {
       />
       <div style={{ opacity: loading ? 0 : 1, transition: "opacity 0.5s" }}>
         <Navbar />
-        <Hero />
+        <Hero ready={!loading} />
         <Work />
         <Skills />
         <Projects />
