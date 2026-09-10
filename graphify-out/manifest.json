@@ -1,0 +1,132 @@
+{
+  "eslint.config.js": {
+    "mtime": 1785374667.286478,
+    "ast_hash": "2683e26e70707841590ff4ad24253919",
+    "semantic_hash": "2683e26e70707841590ff4ad24253919"
+  },
+  "package.json": {
+    "mtime": 1785379823.1614165,
+    "ast_hash": "544f63b2a3347f25a844e543e0b046b5",
+    "semantic_hash": "544f63b2a3347f25a844e543e0b046b5"
+  },
+  "src/App.tsx": {
+    "mtime": 1788403834.105919,
+    "ast_hash": "f74519d1b11c7895e312449d7c8ebc44",
+    "semantic_hash": "f74519d1b11c7895e312449d7c8ebc44"
+  },
+  "src/components/About/About.tsx": {
+    "mtime": 1785516179.1922593,
+    "ast_hash": "8d10f63847957eb5a65b08402324c9d8",
+    "semantic_hash": "8d10f63847957eb5a65b08402324c9d8"
+  },
+  "src/components/Contact/Contact.tsx": {
+    "mtime": 1785516238.273404,
+    "ast_hash": "1a0471d6a237e5e615af04ff8d3e50d0",
+    "semantic_hash": "1a0471d6a237e5e615af04ff8d3e50d0"
+  },
+  "src/components/Hero/Hero.tsx": {
+    "mtime": 1785516128.1292613,
+    "ast_hash": "1055da9039677c88d856d4870e87a514",
+    "semantic_hash": "1055da9039677c88d856d4870e87a514"
+  },
+  "src/components/Hero/Terminal.tsx": {
+    "mtime": 1785516140.7775092,
+    "ast_hash": "c3e8ca1da4cc17a5ef9c088c44b70e95",
+    "semantic_hash": "c3e8ca1da4cc17a5ef9c088c44b70e95"
+  },
+  "src/components/Iridescence/Iridescence.tsx": {
+    "mtime": 1788403825.1515188,
+    "ast_hash": "ec47cda4037bb1c93864898e34e1bc5c",
+    "semantic_hash": "ec47cda4037bb1c93864898e34e1bc5c"
+  },
+  "src/components/LoadingScreen/LoadingScreen.tsx": {
+    "mtime": 1785516145.6856053,
+    "ast_hash": "ac2ebe6efeaa5218508d405ed70d2c2a",
+    "semantic_hash": "ac2ebe6efeaa5218508d405ed70d2c2a"
+  },
+  "src/components/Navbar/Navbar.tsx": {
+    "mtime": 1785516109.0878866,
+    "ast_hash": "dfa8c46fa318afd535bf833a8af0f89a",
+    "semantic_hash": "dfa8c46fa318afd535bf833a8af0f89a"
+  },
+  "src/components/Projects/Projects.tsx": {
+    "mtime": 1785516167.5550327,
+    "ast_hash": "f6ad66114f50f407bbc15536c0a67585",
+    "semantic_hash": "f6ad66114f50f407bbc15536c0a67585"
+  },
+  "src/components/Resume/Resume.tsx": {
+    "mtime": 1785516224.6861415,
+    "ast_hash": "eab8f762fbc0ef8de3cf9f77b7957175",
+    "semantic_hash": "eab8f762fbc0ef8de3cf9f77b7957175"
+  },
+  "src/components/Skills/Skills.tsx": {
+    "mtime": 1785516162.4949338,
+    "ast_hash": "17a32343e270272d946107fbb95bf51c",
+    "semantic_hash": "17a32343e270272d946107fbb95bf51c"
+  },
+  "src/components/Work/Work.tsx": {
+    "mtime": 1785516153.9187665,
+    "ast_hash": "0f3de89a5d7ace8f1b47ba72bdfd53cc",
+    "semantic_hash": "0f3de89a5d7ace8f1b47ba72bdfd53cc"
+  },
+  "src/hooks/useCountUp.ts": {
+    "mtime": 1785374721.7130816,
+    "ast_hash": "bd3f687947379b9221ec7e7c8404925b",
+    "semantic_hash": "bd3f687947379b9221ec7e7c8404925b"
+  },
+  "src/i18n/LanguageContext.tsx": {
+    "mtime": 1785516098.0484812,
+    "ast_hash": "7d3e8d2ef585f13f4b0d7f579944808e",
+    "semantic_hash": "7d3e8d2ef585f13f4b0d7f579944808e"
+  },
+  "src/i18n/translations.ts": {
+    "mtime": 1785516093.268995,
+    "ast_hash": "e4e19514e162c4a56874176831b33177",
+    "semantic_hash": "e4e19514e162c4a56874176831b33177"
+  },
+  "src/main.tsx": {
+    "mtime": 1785516231.645276,
+    "ast_hash": "607d9c38533ac073a59b7c138be51a95",
+    "semantic_hash": "607d9c38533ac073a59b7c138be51a95"
+  },
+  "src/vite-env.d.ts": {
+    "mtime": 1785374667.2869115,
+    "ast_hash": "0352474ba2918efe13895edbc3780d94",
+    "semantic_hash": "0352474ba2918efe13895edbc3780d94"
+  },
+  "tsconfig.app.json": {
+    "mtime": 1785374667.2869453,
+    "ast_hash": "436dbd87b5135f892e04d72d0f1322b7",
+    "semantic_hash": "436dbd87b5135f892e04d72d0f1322b7"
+  },
+  "tsconfig.json": {
+    "mtime": 1785374667.2869847,
+    "ast_hash": "a3d39fa780ebff65444de257f291ce6c",
+    "semantic_hash": "a3d39fa780ebff65444de257f291ce6c"
+  },
+  "tsconfig.node.json": {
+    "mtime": 1785374667.2870154,
+    "ast_hash": "fb0cab58a05d6b15129b7e93b3de0a90",
+    "semantic_hash": "fb0cab58a05d6b15129b7e93b3de0a90"
+  },
+  "vite.config.ts": {
+    "mtime": 1785380340.3212466,
+    "ast_hash": "6f6f195d4555c9ead4f063b0b62c53a9",
+    "semantic_hash": "6f6f195d4555c9ead4f063b0b62c53a9"
+  },
+  ".github/workflows/deploy.yml": {
+    "mtime": 1788405230.7473142,
+    "ast_hash": "afb7a7935e9c3f88e950a7c10f0fd1eb",
+    "semantic_hash": "afb7a7935e9c3f88e950a7c10f0fd1eb"
+  },
+  "index.html": {
+    "mtime": 1785374704.7382996,
+    "ast_hash": "37a92d968b03f9a803f7aaebe861a654",
+    "semantic_hash": "37a92d968b03f9a803f7aaebe861a654"
+  },
+  "public/CV_Franklin_Joel_Sasig.pdf": {
+    "mtime": 1785374795.1450105,
+    "ast_hash": "27bf07e53d8e0f6ead645cde4f880458",
+    "semantic_hash": "27bf07e53d8e0f6ead645cde4f880458"
+  }
+}
